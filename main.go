@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/http"
 	"os"
+	"strings"
 	"github.com/hermanschaaf/cedict"
 )
 
@@ -42,7 +43,7 @@ func main() {
 		"Pinyin",
 		"PinyinWithTones",
 		"PinyinNoTones",
-		"Definition",
+		"Definitions",
 	}
 	writer.Write(header)
 
@@ -60,12 +61,10 @@ func main() {
 			entry.Pinyin,
 			entry.PinyinWithTones,
 			entry.PinyinNoTones,
-			entry.Definitions[0], // TODO include all defs
+			strings.Join(entry.Definitions, "\t"),
 		}
 		writer.Write(line)
 	}
-
-	// TODO: compute hash of file and add to filename
 
 	fmt.Println("Success.")
 }
