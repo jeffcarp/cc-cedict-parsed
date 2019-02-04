@@ -11,9 +11,7 @@ To use CEDICT in your project, download the [parsed CSV](cc-cedict-parsed.csv).
 The file is formatted as CSV. When multiple English definitions exist, they're
 separated by the tab character.
 
-----------
-
-**Todos**
+## Todos
 
 - Automate download, parsing, and pushing new release (if any updates) on a regular basis.
 - Write documentation for consuming updates.
